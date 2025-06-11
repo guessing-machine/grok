@@ -64,7 +64,6 @@ self.onmessage = async function(event) {
             model: llmSettings.model || machineConfig.llm,
             max_tokens: llmSettings.max_tokens || 8000,
             temperature: llmSettings.temperature || 1.0,
-            frequency_penalty: llmSettings.frequency_penalty || 0.0,
             top_p: llmSettings.top_p || 0.9,
             modalities: ["text"],
             response_format: {"type":"text"},
