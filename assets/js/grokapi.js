@@ -89,7 +89,7 @@ self.onmessage = async function(event) {
             body: JSON.stringify(finalApiPayload)
         };
 
-        console.log('Worker: Making API call to OpenAI API with payload:', finalApiPayload);
+        console.log('Worker: Making API call to grok API with payload:', finalApiPayload);
         const apiCallResponse = await fetch(machineConfig.apiUrl, apiOptions);
 
         if (!apiCallResponse.ok) {
@@ -108,7 +108,7 @@ self.onmessage = async function(event) {
         console.log('Worker: API call successful, response:', apiData);
         const choice = apiData.choices[0]
         console.log('Worker: API choice:', choice);
-        const msgResponse = choice.message // OpenAI's API response text is in choices[0].message.content
+        const msgResponse = choice.message // grok API response text is in choices[0].message.content
 
         // Send the successful result back to the main thread
         self.postMessage({ type: 'success', data: msgResponse });
