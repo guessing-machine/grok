@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Reasoning
+title: Guessing
 ---
 {% include utilities.html %}
 {% include action.html %}

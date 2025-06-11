@@ -1,8 +1,8 @@
 ---
 layout: home
-title: Reasoning Machine
+title: Guessing Machine
 ---
-# Reasoning Machine
+# Guessing Machine
 
 <br>
 Go directly to the [Dialogue Page](/grok/machine), [Thoughts Page](/grok/thoughts) or change an submit the settings.
