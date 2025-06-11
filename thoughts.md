@@ -2,7 +2,6 @@
 layout: page
 title: Thoughts
 ---
-### Thoughts
 {% include utilities.html %}
 <div class="container-md markdown-body">
   <h3>Thoughts</h3>
