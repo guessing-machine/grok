@@ -93,7 +93,7 @@ function runMachine() {
     };
     
     llmWorker.postMessage(userQueryParameters);
-    console.log('Main thread: Worker launched and messages sent.');
+    console.log('Main thread: Worker launched and CMJ messages sent.');
     
   } catch (e) {
     console.error('LLM Interaction: Failed to process dialogue or communicate with the worker:', e);
