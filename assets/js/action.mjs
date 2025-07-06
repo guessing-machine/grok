@@ -343,11 +343,18 @@ class MachineApp {
   _processLlmResponse = (llmResponseData, originalCmjMessages) => {
     try {
       console.log('Worker task successful. LLM Response:', llmResponseData);
-      if (!llmResponseData || !llmResponseData.content || llmResponseData.content.length === 0) {
+      if (!llmResponseData || !llmResponseData.content) {
         throw new Error('LLM response is missing message content.');
       }
       
-      const desoupedText = llmSoupToText(llmResponseData.content);
+      const desoupedText = llmSoupToText(llmResponseData.content)
+      
+      console.log('Regular text:', desoupedText);
+      
+      const desoupedThoughts = llmSoupToText(llmResponseData.reasoning_content)
+      
+      console.log('Thoughts text:', desoupedThoughts);
+      
       const newCmjMessage = {
         role: llmResponseData.role,
         name: this.settings.machine.name,
@@ -364,6 +371,9 @@ class MachineApp {
       localStorage.setItem('multilogue', updatedPlatoText);
       this.updateDisplayState();
       console.log('Dialogue updated with LLM response.');
+      if (desoupedThoughts && desoupedThoughts.trim() !== '') {
+        localStorage.setItem('thoughts', desoupedThoughts);
+      }
       
     } catch (processingError) {
       console.error('Error processing LLM response:', processingError);
