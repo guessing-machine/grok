@@ -5,12 +5,8 @@
       <input type="text" id="model" name="model" value="{{ site.lm.model }}">
     </div>
     <div class="form-row"> <!-- Added form-row class -->
-      <label for="max_tokens">max_tokens:</label>
-      <input type="number" id="max_tokens" name="max_tokens" value="{{ site.lm.max_tokens }}" step="1" min="1" max="8192">
-    </div>
-    <div class="form-row"> <!-- Added form-row class -->
-      <label for="frequency_penalty">frequency_penalty:</label>
-      <input type="number" id="frequency_penalty" name="frequency_penalty" value="{{ site.lm.frequency_penalty }}" step="0.1" min="-2.0" max="2.0">
+      <label for="max_completion_tokens">max_completion_tokens:</label>
+      <input type="number" id="max_completion_tokens" name="max_completion_tokens" value="{{ site.lm.max_completion_tokens }}" step="1" min="1" max="8192">
     </div>
     <div class="form-row"> <!-- Added form-row class -->
       <label for="presence_penalty">presence_penalty:</label>
@@ -24,7 +20,11 @@
       <label for="top_p">top_p:</label>
       <input type="number" id="top_p" name="top_p" value="{{ site.lm.top_p }}" step="0.1" min="0.1" max="1">
     </div>
-    <div> <!-- This div can remain as is for the button, or you can add form-row and adjust alignment if needed -->
+    <div class="form-row">
+      <label for="reasoning_effort">reasoning_effort:</label>
+      <input type="text" id="reasoning_effort" name="reasoning_effort" value="high">
+    </div>
+    <div class="form-button-row">
       <a href="#" id="navigateToMachineLink" class="styled-link-button">Thingk with these settings, Machine.</a>
     </div>
   </form>

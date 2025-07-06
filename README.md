@@ -1,1 +1,1 @@
-### Thingking Machine (openai)
+### Guessing Machine (openai)

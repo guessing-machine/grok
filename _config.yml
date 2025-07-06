@@ -6,32 +6,33 @@ relative_links:
 include:
   - README.md
   - LICENSE.md
-url: https://thingking-machine.github.io
-baseurl: /openai
+url: https://guessing-machine.github.io
+baseurl: /grok
 
-title: Thingking Machine
+title: Guessing Machine
 description: A machine is a thing. Things can not think. ...but some of them can thingk!
 
 machine:
-  name: Thingking-Machine
-  instructions_file: thingking.txt
-  token: openai.txt
-  apiUrl: https://api.openai.com/v1/chat/completions
+  name: Guessing-Machine
+  instructions_file: guessing.txt
+  token: grok.txt
+  apiUrl: https://api.x.ai/v1/chat/completions
 
 app:
-  worker_name: oaiapi.js
+  worker_name: grokapi.js
 
 lm:
-  model: gpt-4.1
-  max_tokens: 8192
+  model: grok-3-mini-fast
+  max_completion_tokens: 8192
   presence_penalty: 0.0
-  frequency_penalty: 0.0
   temperature: 1.0
   top_p: 0.95
+  reasoning_effort: high
+
 
 github_settings:
-  owner: thingking-machine
-  repo: thingking_machine
+  owner: guessing-machine
+  repo: guessing_machine
   file_name: machina.yaml
   branch: main
   token_file: github.txt
